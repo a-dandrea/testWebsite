@@ -1,17 +1,25 @@
+<!-- Logout Page -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Logged Out</title>
+    <title>MissionCritical - Logout</title>
     <link rel="stylesheet" href="https://a-dandrea.github.io/testWebsite/html/style.css">
+    <script>
+        window.onload = function() {
+            localStorage.removeItem('loggedIn');
+            alert('You have been logged out.');
+            window.location.href = 'index.html';
+        }
+    </script>
 </head>
 <body>
-    <div class="container">
-        <h1>You have been logged out</h1>
-        <p>Thank you for using the Fitness Tracker. You have successfully logged out.</p>
-        <a href="https://a-dandrea.github.io/testWebsite/html/login.html">Login Again</a>
-        <p><a href="https://a-dandrea.github.io/testWebsite/html/home.html">Go back to Home</a></p>
-    </div>
+    <header>
+      <a href="https://a-dandrea.github.io/testWebsite/index.html">
+         <img src="https://a-dandrea.github.io/testWebsite/MC Logo.png" alt="MissionCritical Logo" class="logo">
+     </a>
+      <h1>Logging Out...</h1>
+    </header>
 </body>
 </html>

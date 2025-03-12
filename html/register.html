@@ -1,24 +1,32 @@
+<!-- Registration Page -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
+    <title>MissionCritical - Register</title>
+    <link rel="stylesheet" href="https://a-dandrea.github.io/testWebsite/html/style.css">
 </head>
 <body>
-    <h1>Register</h1>
-    <form action="https://a-dandrea.github.io/testWebsite/cgi-bin/register.py" method="POST">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
-
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-
-        <label for="confirm_password">Confirm Password:</label>
-        <input type="password" id="confirm_password" name="confirm_password" required>
-
-        <button type="submit">Register</button>
-    </form>
-    <p>Already have an account? <a href="https://a-dandrea.github.io/testWebsite/html/login.html">Login here</a></p>
+    <header>
+      <a href="https://a-dandrea.github.io/testWebsite/index.html">
+         <img src="https://a-dandrea.github.io/testWebsite/MC Logo.png" alt="MissionCritical Logo" class="logo">
+     </a>
+        <h1>Register</h1>
+    </header>
+    <div class="container">
+        <form class="section">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <button type="submit">Register</button>
+        </form>
+    </div>
 </body>
 </html>

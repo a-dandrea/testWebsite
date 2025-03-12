@@ -1,21 +1,36 @@
+<!-- Login Page -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>MissionCritical - Login</title>
+    <link rel="stylesheet" href="https://a-dandrea.github.io/testWebsite/html/style.css">
+    <script>
+        function login(event) {
+            event.preventDefault();
+            localStorage.setItem('loggedIn', 'true');
+            window.location.href = 'dashboard.html';
+        }
+    </script>
 </head>
 <body>
-    <h1>Login</h1>
-    <form action="https://a-dandrea.github.io/testWebsite/cgi-bin/login.py" method="POST">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
-
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-
-        <button type="submit">Login</button>
-    </form>
-    <p>Don't have an account? <a href="https://a-dandrea.github.io/testWebsite/html/register.html">Register here</a></p>
+    <header>
+      <a href="https://a-dandrea.github.io/testWebsite/index.html">
+         <img src="https://a-dandrea.github.io/testWebsite/MC Logo.png" alt="MissionCritical Logo" class="logo">
+     </a>
+      <h1>Log In</h1>
+    </header>
+    <div class="container">
+        <form class="section" onsubmit="login(event)">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <button type="submit">Log In</button>
+        </form>
+    </div>
 </body>
 </html>
