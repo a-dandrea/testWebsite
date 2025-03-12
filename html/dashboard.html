@@ -1,13 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>MissionCritical - Dashboard</title>
+   <link rel="stylesheet" href="style.css">
+   <script>
+      window.onload = async function() {
+         if (localStorage.getItem('loggedIn') !== 'true') {
+            alert('Access denied. Please log in first.');
+               window.location.href = 'login.html';
+               return;
+            }
+
+            try {
+               const token = localStorage.getItem('token');
+               const response = await fetch('http://localhost:5000/user-stats', {
+                  method: 'GET',
+                  headers: { 'Authorization': 'Bearer ' + token }
+               });
+               if (!localStorage.getItem('loggedIn')) {
+                  alert('Please log in first.');
+                  window.location.href = 'login.html';
+               }
+               const data = await response.json();
+
+               document.getElementById('steps').textContent = data.steps;
+               document.getElementById('miles').textContent = data.miles;
+               document.getElementById('flights').textContent = data.flights;
+               document.getElementById('active-minutes').textContent = data.activeMinutes;
+               document.getElementById('height').textContent = data.height;
+               document.getElementById('weight').textContent = data.weight;
+               document.getElementById('bmi').textContent = data.bmi;
+               document.getElementById('your-steps').textContent = data.steps;
+
+               const leaderboardList = document.getElementById('leaderboard');
+               leaderboardList.innerHTML = '';
+               data.leaderboard.forEach(user => {
+                  const li = document.createElement('li');
+                  li.textContent = `${user.name} - ${user.steps} steps`;
+                  leaderboardList.appendChild(li);
+               });
+            } catch (error) {
+               console.error('Error fetching data:', error);
+            }
+      };
+   </script>
 </head>
 <body>
-    <h1>Welcome to your Dashboard!</h1>
-    <p>Your account is active and you can now access your fitness tracker data.</p>
-    <a href="/cgi-bin/logout.py">Logout</a>
+   <header>
+      <a href="index.html">
+         <img src="MC Logo.png" alt="MissionCritical Logo" class="logo">
+      </a>
+      <h1>Dashboard</h1>
+         <nav>
+            <a href="index.html">Home</a>
+            <a href="logout.html">Log Out</a>
+         </nav>
+   </header>
+   <div class="container">
+      <section class="stats-overview">
+         <h2>Your Stats Overview</h2>
+         <ul>
+            <li>Steps: <span id="steps">Loading...</span></li>
+            <li>Miles Walked: <span id="miles">Loading...</span></li>
+            <li>Flights Climbed: <span id="flights">Loading...</span></li>
+            <li>Active Minutes: <span id="active-minutes">Loading...</span></li>
+         </ul>
+      </section>
+        
+      <section class="health-info">
+         <h2>Your Health Info</h2>
+         <ul>
+            <li>Height: <span id="height">Loading...</span></li>
+            <li>Weight: <span id="weight">Loading...</span></li>
+            <li>BMI: <span id="bmi">Loading...</span></li>
+         </ul>
+      </section>
+        
+      <section class="leaderboard">
+         <h2>Leaderboard</h2>
+         <ol id="leaderboard">
+            <li>Loading...</li>
+         </ol>
+      </section>
+   </div>
 </body>
 </html>

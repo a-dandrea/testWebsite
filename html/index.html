@@ -3,14 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fitness Tracker</title>
+    <title>MissionCritical - Home</title>
     <link rel="stylesheet" href="style.css">
+    <script>
+        window.onload = function() {
+            const loggedIn = localStorage.getItem('loggedIn') === 'true';
+            document.getElementById('loginLink').style.display = loggedIn ? 'none' : 'inline';
+            document.getElementById('logoutLink').style.display = loggedIn ? 'inline' : 'none';
+        };
+    </script>
 </head>
 <body>
+    <header>
+      <a href="index.html">
+         <img src="MC Logo.png" alt="MissionCritical Logo" class="logo">
+     </a>
+        <h1>MissionCritical</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="login.html" id="loginLink">Log In</a>
+            <a href="register.html">Register</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="logout.html" id="logoutLink">Log Out</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <p>Achieve Your Fitness Goals with MissionCritical</p>
+    </section>
+
     <div class="container">
-        <h1>Welcome to Fitness Tracker</h1>
-        <a href="login.html">Login</a> | 
-        <a href="register.html">Register</a>
+        <div class="section">
+            <h2>Welcome to MissionCritical</h2>
+            <p>Join our fitness community and start your journey to a healthier life.</p>
+        </div>
     </div>
+
+    <footer>
+        <p>&copy; 2025 MissionCritical. All rights reserved.</p>
+    </footer>
 </body>
 </html>
