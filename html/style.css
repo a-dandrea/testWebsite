@@ -2,102 +2,102 @@
 
 /* General Styles */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #e6f4ea;
-    color: #2d6a4f;
-    margin: 0;
-    padding: 0;
+   font-family: 'Arial', sans-serif;
+   background-color: #e6f4ea;
+   color: #2d6a4f;
+   margin: 0;
+   padding: 0;
 }
 
 /* Header */
 header {
-    background-color: #40916c;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    position: relative;
+   background-color: #40916c;
+   color: white;
+   text-align: center;
+   padding: 20px 0;
+   position: relative;
 }
 
 .logo {
-    position: absolute;
-    top: 10px;
-    left: 20px;
-    width: 100px;
+   position: absolute;
+   top: 10px;
+   left: 20px;
+   width: 100px;
 }
 
 nav {
-    margin-top: 10px;
+   margin-top: 10px;
 }
 
 nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 18px;
+   color: white;
+   text-decoration: none;
+   margin: 0 15px;
+   font-size: 18px;
 }
 
 nav a:hover {
-    text-decoration: underline;
+   text-decoration: underline;
 }
 
 /* Hero Section */
 .hero {
-    background: url('hero-image.jpg') no-repeat center center/cover;
-    height: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    font-size: 28px;
-    font-weight: bold;
-    padding: 20px;
+   background: url('hero-image.jpg') no-repeat center center/cover;
+   height: 400px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   color: white;
+   font-size: 28px;
+   font-weight: bold;
+   padding: 20px;
 }
 
 /* Main Content */
 .container {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 20px;
+   max-width: 1200px;
+   margin: 20px auto;
+   padding: 20px;
 }
 
 .section {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin-bottom: 20px;
+   background-color: white;
+   border-radius: 10px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   padding: 20px;
+   margin-bottom: 20px;
 }
 
 h2 {
-    color: #1b4332;
+   color: #1b4332;
 }
 
 /* Images */
 .image-box {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
+   width: 100%;
+   height: auto;
+   border-radius: 10px;
 }
 
 /* Footer */
 footer {
-    background-color: #1b4332;
-    color: white;
-    text-align: center;
-    padding: 15px 0;
-    margin-top: 20px;
+   background-color: #1b4332;
+   color: white;
+   text-align: center;
+   padding: 15px 0;
+   margin-top: 20px;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .hero {
-        height: 300px;
-        font-size: 22px;
-    }
+   .hero {
+      height: 300px;
+      font-size: 22px;
+   }
     nav a {
-        font-size: 16px;
-        margin: 0 10px;
-    }
+      font-size: 16px;
+      margin: 0 10px;
+   }
 }
 
